@@ -1,0 +1,11 @@
+<div class="list">
+  @for (item of items; track item; let i = $index) { @defer (on viewport) {
+  <app-list-item
+    [index]="i"
+    [item]="item"
+    (loaded)="loadItems($event)"
+  ></app-list-item>
+  } @placeholder {
+  <div>loading...</div>
+  } }
+</div>
